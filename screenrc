@@ -17,6 +17,7 @@ defbce "on"
 
 # Enable 256 color term
 term xterm-256color
+shell "/bin/zsh"
 
 # Cache 30000 lines for scroll back
 defscrollback 30000
@@ -28,9 +29,9 @@ hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= 
 bind , title
 bind l other
 
-screen -t bash
-screen -t bash
-screen -t bash
-screen -t bash
-screen -t bash
-screen -t bash
+screen -t zsh
+screen -t zsh
+screen -t zsh
+screen -t zsh
+screen -t zsh
+screen -t zsh
