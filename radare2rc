@@ -1,0 +1,43 @@
+e dbg.bep   = entry
+e cmd.stack = true
+eco solarized
+e scr.utf8 = true
+e asm.relsub = true
+e asm.syntax=intel
+#e asm.pseudo = true
+e asm.describe = false
+e prj.git = true
+
+e anal.calls = true
+e anal.cjmpref = true
+e anal.datarefs = true
+e anal.jmpref = true
+e anal.jmptbl = true
+e anal.refstr = true
+e anal.strings = true
+e asm.anal = true
+e asm.lines.call = true
+
+# Testing functions recognition
+#e anal.brokenrefs = true
+#e anal.hasnext = true
+#e anal.noncode = true
+#e anal.pushret = true
+#e anal.recont = true
+#e anal.rnr = true
+#e asm.jmpsub = true
+#e asm.lines.ret = true
+#e asm.nodup = true
+#e asm.varxs = true
+#e asm.emustr = true
+#e anal.a2f = true
+
+# Tweaks
+e asm.emu = true
+e asm.emu.stack = true
+e asm.middle = true
+#e anal.eobjmp = true
+#e anal.esil = true
+
+# Emulation macro
+(emu_init, ar0, aeim-, aei-, aei, aeim, aeip, aer)
