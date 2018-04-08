@@ -2,42 +2,34 @@ e dbg.bep   = entry
 e cmd.stack = true
 eco solarized
 e scr.utf8 = true
-e asm.relsub = true
-e asm.syntax=intel
-#e asm.pseudo = true
-e asm.describe = false
 e prj.git = true
 
 e anal.calls = true
 e anal.cjmpref = true
-e anal.datarefs = true
 e anal.jmpref = true
 e anal.jmptbl = true
 e anal.refstr = true
 e anal.strings = true
+e anal.brokenrefs = true
+e anal.datarefs = true
+e anal.noncode = true
+
 e asm.anal = true
 e asm.lines.call = true
-
-# Testing functions recognition
-#e anal.brokenrefs = true
-#e anal.hasnext = true
-#e anal.noncode = true
-#e anal.pushret = true
-#e anal.recont = true
-#e anal.rnr = true
-#e asm.jmpsub = true
-#e asm.lines.ret = true
-#e asm.nodup = true
-#e asm.varxs = true
-#e asm.emustr = true
-#e anal.a2f = true
-
-# Tweaks
-e asm.emu = true
-e asm.emu.stack = true
 e asm.middle = true
-#e anal.eobjmp = true
-#e anal.esil = true
+e asm.lines.ret = true
+e asm.relsub = true
+e asm.syntax=intel
+e asm.describe = false
 
 # Emulation macro
-(emu_init, ar0, aeim-, aei-, aei, aeim, aeip, aer)
+(emu_init, ar0, aeim-, aei-, aei, aeim, aeip, aer, e io.pcache = true)
+
+# r2-makros for r4ge
+(markMemSymbolic addr bytes name, #!pipe python2.7 /Users/mehdikhemir/Documents/Tools/r4ge/src/createVariable.py symb $0 $1 $2)
+(addHook addr instructions bytes comment, #!pipe python2.7 /Users/mehdikhemir/Documents/Tools/r4ge/src/createVariable.py hook $0 $1 $2 $3)  
+(addAssert addr assertions comment, #!pipe python2.7 /Users/mehdikhemir/Documents/Tools/r4ge/src/createVariable.py assert $0 $1 $2)
+(checkStdout content,  #!pipe python2.7 /Users/mehdikhemir/Documents/Tools/r4ge/src/createVariable.py checkstdout $0)
+(createScript name, #!pipe python2.7 /Users/mehdikhemir/Documents/Tools/r4ge/src/createScript.py $0)
+(callFunction retval, #!pipe python2.7 /Users/mehdikhemir/Documents/Tools/r4ge/src/callFunction.py $0)
+(r4ge, #!pipe python2.7 /Users/mehdikhemir/Documents/Tools/r4ge/src/r4ge.py)
